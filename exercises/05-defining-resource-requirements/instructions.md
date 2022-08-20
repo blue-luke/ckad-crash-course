@@ -21,4 +21,10 @@ spec:
 ```
 
 1. Create a new Pod that exceeds the limits of the resource quota requirements e.g. by defining 1Gi of memory but stays below the CPU e.g. 0.5. Write down the error message.
+k create deployment dep --image=nginx --replicas=1 -n rq-demo
+k set resources deployment/dep --requests=memory=1Gi,cpu=500m -n rq-demo
+Not sure what error message they want
+Could also specify requests in yaml and upload to an ns that already has the quota applied. That might produce the error message
 2. Change the request limits to fulfill the requirements to ensure that the Pod could be created successfully. Write down the output of the command that renders the used amount of resources for the namespace.
+k set resources deployment/dep --requests=memory=450Mi,cpu=500m -n rq-demo
+k describe ns rq-demo
