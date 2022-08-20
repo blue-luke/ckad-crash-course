@@ -23,6 +23,7 @@ bin  boot  dev  etc  home  lib  lib64  media  mnt  opt  proc  root  run  sbin  s
 k get pod -n ckad-prep -o wide
 10.4.1.96
 8. Run a temporary Pod in the namespace `ckad-prep` using the image `busybox`, shell into it and run a `wget` command against the `nginx` Pod using port 80.
+Remember to use the `--rm` to create a temporary Pod.
 (used nginx and curl instead)
 9. Render the logs of Pod `mypod`.
 k logs mypod -n ckad-prep
