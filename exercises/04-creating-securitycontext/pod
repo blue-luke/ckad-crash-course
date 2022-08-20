@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: secured
+spec:
+  securityContext:
+    fsGroup: 3000
+  volumes:
+  - name: vol
+    emptyDir: {}
+  containers:
+  - name: secured
+    image: nginx
+    volumeMounts:
+    - name: vol
+      mountPath: /data/app

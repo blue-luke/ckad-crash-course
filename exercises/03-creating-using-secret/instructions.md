@@ -7,6 +7,14 @@ In this exercise, you will first create a Secret from literal values. Next, you'
 ## Configuring a Pod to Use a Secret
 
 1. Create a new Secret named `db-credentials` with the key/value pair `db-password=passwd`.
+k create secret generic db-credentials --from-literal=db-password=passwd
 2. Create a Pod named `backend` that uses the Secret as environment variable named `DB_PASSWORD` and runs the container with the image `nginx`.
+See pod file
 3. Shell into the Pod and print out the created environment variables. You should find `DB_PASSWORD` variable.
+k exec -it backend -- /bin/sh
+env
+or $ echo DB_PASSWORD
 4. (Optional) Discuss: What is one of the benefit of using a Secret over a ConfigMap?
+Can be opaque
+Handled separately
+Can seal/encrypt
