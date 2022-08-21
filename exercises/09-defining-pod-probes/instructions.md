@@ -17,4 +17,5 @@ Output = Hello World
 5. Retrieve the logs from the container. Write down the output.
 Magic happens on port 3000
 
+Overlooked the 8 second period on the liveness probe!
 Note - I'm not clear on how the pod can ping itself on localhost:3000. Clarify understanding. Is localhost just a way of accessing a server locally?

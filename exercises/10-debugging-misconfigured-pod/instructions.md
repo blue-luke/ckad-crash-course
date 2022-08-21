@@ -32,5 +32,8 @@ status: {}
 ```
 
 2. Check the Pod's status. Do you see any issue?
+No, it is running
 3. Follow the logs of the running container and identify an issue.
+/bin/sh: can't create /root/tmp/curr-date.txt: nonexistent directory
 4. Fix the issue by shelling into the container. After resolving the issue the current date should be written to a file. Render the output.
+Needed to cd /root; mkdir tmp; cat curr-date.txt
