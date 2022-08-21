@@ -4,3 +4,6 @@ Exercise 07
 
 Ex 14
 - Changing a service to a nodeport. Couldn't access it from outside the cluster though
+
+Ex 15
+- Network policies not enabled on my cluster. Set up a new one after CKAD, enabled network policies, explore?

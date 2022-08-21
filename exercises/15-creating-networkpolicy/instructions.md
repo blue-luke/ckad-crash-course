@@ -57,7 +57,14 @@ spec:
 ```
 
 1. Create the required namespace.
+Fine
 2. Copy the Pod definition to the file `app-stack.yaml` and create all three Pods. Notice that the namespace has already been defined in the YAML definition.
+Fine
 3. Create a network policy in the YAML file `app-stack-network-policy.yaml`.
+Only allow ingress from backend
+Implicitly disallowing ingress from frontend
+Only allow TCP port 3306 for ingress
 4. The network policy should allow incoming traffic from the backend to the database but disallow incoming traffic from the frontend.
 5. Incoming traffic to the database should only be allowed on TCP port 3306 and no other port.
+Network policies probably not enabled on my cluster
+Exec'd onto the frontend pod, tried to ping the db, connectection refused, probably because of port 
