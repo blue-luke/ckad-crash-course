@@ -16,4 +16,4 @@ k run pod --image=nginx --serviceaccount=backend-team
 Accidentally called the service backed-team intially
 4. Get a shell to the running container and print out the token of the service account.
 ServiceAccount token is automounted /var/run/secrets/kubernetes.io/serviceaccount/token, had to look at docs to find this out, wasn't obvious 
-Getting different tokens, not massively worried, synchronisation problem>
+Getting different tokens, not massively worried, synchronisation problem?

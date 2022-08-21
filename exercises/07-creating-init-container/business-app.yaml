@@ -13,16 +13,17 @@ spec:
       name: vol
   initContainers:
   - name: configurer
-    image: nginx
+    image: busybox
     ports:
     - containerPort: 80
     volumeMounts:
     - mountPath: "/usr/shared/app"
       name: vol
     command:
-    - curl
+    - wget
     - "-O"
-    - "https://raw.githubusercontent.com/bmuschko/ckad-crash-course/master/exercises/07-creating-init-container/app/config/config.json"
+    - "/usr/shared/app/config.json"
+    - https://raw.githubusercontent.com/bmuschko/ckad-crash-course/master/exercises/07-creating-init-container/app/config/config.json
   volumes:
   - name: vol
     emptyDir: {}
